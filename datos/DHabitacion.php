@@ -1,13 +1,6 @@
 <?php
     include_once('conexion.php');
-    class Habitacion{
-  private $id_h;
-  private $galeria;
-  private $descripcion_h;
-  private $fecha_h;
-  private $planes_id;
-  private $categorias_id;
-    
+    class DHabitacion{
   private $pdo;
     
     public function __construct(){
