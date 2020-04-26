@@ -1,6 +1,8 @@
 <?php
-    include_once('habitacion.php');
+    include_once('Dcategoria.php');
 
 
-    $habitacion = new Habitacion();
-    print_r($habitacion->getAll());
+    $categoria = new DCategoria();
+    $categoria->set('id',4);
+    $categoria->delete();
+    print_r($categoria->getAll());
