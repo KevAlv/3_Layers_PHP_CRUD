@@ -9,3 +9,6 @@
     $categoria->eliminar(5);
     
     print_r($categoria->getAll());
+
+
+    

@@ -1,6 +1,11 @@
 <?php
 include_once('includes/header.php');
+include_once('../negocio/NUsuario.php');
+$clientes = new NUsuario;
+$datos = $clientes->getAll();
+
 ?>
+
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Clientes</h1>
@@ -17,16 +22,12 @@ include_once('includes/header.php');
                     <tr>
                       <th>Nombre</th>
                       <th>Email</th>
-                      <th>Modo</th>
                       <th>Fecha</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
+                    
                       </tr>
                     <tr>
                   </tbody>

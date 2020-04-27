@@ -1,6 +1,6 @@
 <?php
     include_once('conexion.php');
-    class DCliente{
+    class DUsuario{
         private $id_u;
         private $nombre;
         private $password;
