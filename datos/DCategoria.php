@@ -39,17 +39,16 @@ class DCategoria{
     }
 
 
- public function update(){
+ public function modificar(){
     try {
         $stm = $this->pdo->prepare("UPDATE categorias SET color=?,img=?,descripcion=? WHERE id=?");
         $stm->execute(array($this->color,$this->img,$this->descripcion,$this->id));
     } catch (PDOException $e) {
         echo $e->getMessage();
     }
-    
     }
 
- public function delete(){
+ public function eliminar(){
    try {
     $stm=$this->pdo->prepare("DELETE FROM categorias WHERE id=?");
     $stm->execute(array($this->id));

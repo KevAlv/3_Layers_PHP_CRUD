@@ -20,7 +20,6 @@
          }
 
         public function modificar($id,$password,$email,$foto){
-            $this->cliente->set('id',$id);
             $this->cliente->set('nombre',$nombre);
             $this->cliente->set('password',$password);
             $this->cliente->set('email',$email);
