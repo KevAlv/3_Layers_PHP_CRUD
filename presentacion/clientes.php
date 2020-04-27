@@ -2,8 +2,6 @@
 include_once('includes/header.php');
 include_once('../negocio/NUsuario.php');
 $clientes = new NUsuario;
-$datos = $clientes->getAll();
-
 ?>
 
           <!-- Page Heading -->
@@ -23,12 +21,20 @@ $datos = $clientes->getAll();
                       <th>Nombre</th>
                       <th>Email</th>
                       <th>Fecha</th>
+                      <th>Acciones</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                    
-                      </tr>
+                  
+                  <?php foreach($clientes->getAll() as $cliente): ?>
+    <tr>
+      <td><?php echo $cliente->nombre?></td>
+      <td><?php echo $cliente->email?></td>
+      <td><?php echo $cliente->fecha?></td>
+      <td><a href="index.php?controller=animal&action=showById&id=<?php echo $animal->id; ?>">Editar</a></td>
+      <td><a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="index.php?controller=animal&action=quit&id=<?php echo $animal->id; ?>">Eliminar</a></td>
+    </tr>
+  <?php endforeach;?>
                     <tr>
                   </tbody>
                 </table>
