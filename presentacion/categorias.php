@@ -1,12 +1,12 @@
 <?php
 include_once('includes/header.php');
-include_once('../negocio/NPlan.php');
-$planes = new NPlan;
+include_once('../negocio/NCategoria.php');
+$categorias = new NCategoria;
 ?>
         
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Planes</h1>
+    <h1 class="h3 mb-0 text-gray-800">Categorias</h1>
     </div>
     
     <div class="card shadow mb-4">
@@ -49,17 +49,20 @@ $planes = new NPlan;
                   <thead>
                     <tr>
                       <th>Nro</th>
-                      <th>Tipo</th>
+                      <th>Color</th>
                       <th>Imagen</th>
+                      <th>Descripcion</th>
                       <th>Acciones</th>
                     </tr>
                   </thead>
                   <tbody>
                   
-                  <?php foreach($planes->getAll() as $plan): ?>
+                  <?php foreach($categorias->getAll() as $categoria): ?>
     <tr>
-      <td><?php echo $plan->id?></td>
-      <td><?php echo $plan->tipo?></td>
+      <td><?php echo $categoria->id?></td>
+      <td><?php echo $categoria->color?></td>
+      <td><?php echo $categoria->img?></td>
+      <td><?php echo $categoria->descripcion?></td>
       <td>
         <img src="https://i.pinimg.com/280x280_RS/ab/2d/bb/ab2dbb689496c89833736671ea14b855.jpg" alt="..." class="img-thumbnail">
       </td>

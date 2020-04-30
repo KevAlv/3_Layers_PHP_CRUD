@@ -33,7 +33,7 @@
  public function create(){
      try {
          $stm = $this->pdo->prepare("INSERT INTO usuarios (nombre,password,email,foto) VALUES (?,?,?,?)");
-     $stm->execute(array($this->nombre,$this->password,$this->email,$this->foto,$this->email,));
+     $stm->execute(array($this->nombre,$this->password,$this->email,$this->foto,));
      } catch (PDOException $e) {
          echo $e->getMessage();
      }

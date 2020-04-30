@@ -8,7 +8,7 @@
     private $host='localhost';
     private $user='root';
     private $pass='';
-    private $dbName='reservas-hotel';
+    private $dbName='reservas-hotel-lite';
     private $charset='utf8';
     
     //patron singleton
