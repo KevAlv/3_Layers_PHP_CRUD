@@ -18,7 +18,7 @@ $planes = new NPlan;
           <form action="/action_page.php" class="was-validated">
           <div class="form-group">
     <label for="uname">Tipo</label>
-    <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+    <input type="text" class="form-control" id="uname" placeholder="Enter username" name="nombre" required>
     <div class="valid-feedback">Valid.</div>
     <div class="invalid-feedback">Please fill out this field.</div>
   </div>

@@ -15,40 +15,34 @@ $usuarios = new NUsuario;
         Agregar
         </div>
         <div class="card-body">
-                  <!-- Page Heading -->
-          <form action="../negocio/NUsuario.php" method ="POST" enctype="multipart/form-data" class="was-validated">
+                  
+
+
+             <!-- Page Heading -->
+          <form action="../negocio/upload_image.php" class="was-validated" method = "POST" method="post" enctype="multipart/form-data">
           <div class="form-group">
-    <label for="nombre">Nombre</label>
+    <label for="uname">Tipo</label>
     <input type="text" class="form-control" id="uname" placeholder="Enter username" name="nombre" required>
     <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
   </div>
-
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="text" class="form-control" id="uname" placeholder="Enter username" name="email" required>
-    <div class="valid-feedback">Valid.</div>
-  </div>
-
-  <div class="form-group">
-    <label for="password">Contraseña</label>
-    <input type="password" class="form-control" id="uname" placeholder="Enter username" name="password" required>
-    <div class="valid-feedback">Valid.</div>
-  </div>
-
 
   <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
   </div>
   <div class="custom-file">
-    <input type="file" name="foto" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-    <label class="custom-file-label" for="inputGroupFile01">Subir foto de perfil</label>
+    <input type="file" class="custom-file-input" id="fileToUpload" name="fileToUpload" aria-describedby="inputGroupFileAddon01">
+    <label class="custom-file-label" for="fileToUpload">Choose file</label>
   </div>
 </div>
 
-  <button type="submit" class="btn btn-primary">Guardar</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
 
 </div>
+</div>
+</form>
+
 
 
           </div>

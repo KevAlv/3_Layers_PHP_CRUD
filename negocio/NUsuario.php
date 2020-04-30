@@ -1,12 +1,13 @@
 <?php
     include_once('../datos/DUsuario.php');
 
-    if (isset($_POST['nombre'])){
+    if (isset($_POST['submit'])){
+        print_r($_FILES());
         $target_dir = "assets/img/";
         $target_file = $target_dir . basename($_FILES["foto"]["name"]);
         $usuario = new NUsuario;
         $usuario->create($_POST['nombre'],$_POST['password'],$_POST['email'],$_POST['$target_file']);
-        header("Location: ../presentacion/usuarios.php");
+      //  header("Location: ../presentacion/usuarios.php");
         die();
     }
 
@@ -20,6 +21,7 @@
         public function getAll(){
            return $this->usuario->getAll();
         }
+
 
         public function create($nombre,$password,$email,$foto){
             $this->usuario->set('nombre',$nombre);
