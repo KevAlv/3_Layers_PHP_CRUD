@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include_once('includes/header.php');
 include_once('../negocio/NPlan.php');
 $planes = new NPlan;
@@ -15,7 +16,7 @@ $planes = new NPlan;
         </div>
         <div class="card-body">
                   <!-- Page Heading -->
-          <form action="/action_page.php" class="was-validated">
+          <form action="../negocio/NPlan.php" class="was-validated">
           <div class="form-group">
     <label for="uname">Tipo</label>
     <input type="text" class="form-control" id="uname" placeholder="Enter username" name="nombre" required>
@@ -61,7 +62,7 @@ $planes = new NPlan;
       <td><?php echo $plan->id?></td>
       <td><?php echo $plan->tipo?></td>
       <td>
-        <img src="https://i.pinimg.com/280x280_RS/ab/2d/bb/ab2dbb689496c89833736671ea14b855.jpg" alt="..." class="img-thumbnail">
+        <img src="assets/" alt="..." class="img-thumbnail">
       </td>
       <td><?php echo $plan->img?></td>
       <td><a href="index.php?controller=animal&action=showById&id=<?php echo $animal->id; ?>">Editar</a></td>

@@ -1,8 +1,6 @@
 <?php
-
-uploadImage($_FILES);
  function uploadImage($FILES){
-    $target_dir = "/presentacion/uploads/";
+    $target_dir = "../presentacion/assets/img/";
 $target_file = $target_dir . basename($FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

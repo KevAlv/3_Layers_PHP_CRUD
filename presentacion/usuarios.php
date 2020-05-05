@@ -8,8 +8,6 @@ $usuarios = new NUsuario;
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">usuarios</h1>
           </div>
-
-          
           <div class="card shadow mb-4">
         <div class="card-header py-3">
         Agregar
@@ -19,13 +17,24 @@ $usuarios = new NUsuario;
 
 
              <!-- Page Heading -->
-          <form action="../negocio/upload_image.php" class="was-validated" method = "POST" method="post" enctype="multipart/form-data">
+          <form action="../negocio/NUsuario.php" class="was-validated" method = "POST" method="post" enctype="multipart/form-data">
           <div class="form-group">
-    <label for="uname">Tipo</label>
-    <input type="text" class="form-control" id="uname" placeholder="Enter username" name="nombre" required>
-    <div class="valid-feedback">Valid.</div>
-    <div class="invalid-feedback">Please fill out this field.</div>
-  </div>
+                <label for="uname">Nombre</label>
+                  <input type="text" class="form-control" id="uname" placeholder="Enter username" name="nombre" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+
+                <label for="uname">Correo</label>
+                  <input type="text" class="form-control" id="uname" placeholder="Enter correo" name="email" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+
+                <label for="uname">Contrasena</label>
+                  <input type="text" class="form-control" id="uname" placeholder="Enter password" name="password" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+
 
   <div class="input-group mb-3">
   <div class="input-group-prepend">
@@ -44,19 +53,17 @@ $usuarios = new NUsuario;
 </form>
 
 
-
-          </div>
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Usuarios</h6>
+              <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Nombre</th>
+                    <th>Nombre</th>
                       <th>Email</th>
                       <th>Fecha</th>
                       <th>Acciones</th>
@@ -65,25 +72,22 @@ $usuarios = new NUsuario;
                   <tbody>
                   
                   <?php foreach($usuarios->getAll() as $usuario): ?>
-    <tr>
-      <td><?php echo $usuario->nombre?></td>
-      <td><?php echo $usuario->email?></td>
-      <td><?php echo $usuario->fecha?></td>
-      <td><a href="index.php?controller=animal&action=showById&id=<?php echo $animal->id; ?>">Editar</a>
-      <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" 
-      href="../negocio/NUsuario.php?delete_id=<?php echo($usuario->id); ?>">Eliminar</a></td>
-    </tr>
-  <?php endforeach;?>
-                    <tr>
-                  </tbody>
+                <tr>
+                  <td><?php echo $usuario->nombre?></td>
+                  <td><?php echo $usuario->email?></td>
+                  <td><?php echo $usuario->fecha?></td>
+                  <td><a href="../negocio/NUsuario.php?delete_id=<?php echo($usuario->id); ?>">Editar</a>
+                  <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" 
+                  href="../negocio/NUsuario.php?delete_id=<?php echo($usuario->id); ?>">Eliminar</a></td>
+                </tr>
+              <?php endforeach;?>
+                                <tr>
+                              </tbody>
                 </table>
               </div>
             </div>
           </div>
-
-
-
-          
+          <!-- End of datatable -->
 <?php
 include_once('includes/footer.php');
 ?>

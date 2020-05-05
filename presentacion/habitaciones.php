@@ -58,24 +58,25 @@ $habitaciones = new NHabitacion;
                   </thead>
                   <tbody>
                   
-                  <?php foreach($habitaciones->getAll() as $habitacion): ?>
-    <tr>
-      <td><?php echo $habitacion->id?></td>
-      <td><?php echo $habitacion->galeria?></td>
-      <td><?php echo $habitacion->estado?></td>
-      <td><?php echo $habitacion->descripcion?></td>
-      <td><?php echo $habitacion->id_categoria?></td>
-      <td><?php echo $habitacion->id_plan?></td>
-      <td><a href="index.php?controller=animal&action=showById&id=<?php echo $animal->id; ?>">Editar</a></td>
-      <td><a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="index.php?controller=animal&action=quit&id=<?php echo $animal->id; ?>">Eliminar</a></td>
-    </tr>
-  <?php endforeach;?>
+                        <?php foreach($habitaciones->getAll() as $habitacion): ?>
+                        <tr>
+                          <td><?php echo $habitacion->id?></td>
+                          <td><?php echo $habitacion->galeria?></td>
+                          <td><?php echo $habitacion->estado?></td>
+                          <td><?php echo $habitacion->descripcion?></td>
+                          <td><?php echo $habitacion->id_categoria?></td>
+                          <td><?php echo $habitacion->id_plan?></td>
+                          <td><a href="index.php?controller=animal&action=showById&id=<?php echo $animal->id; ?>">Editar</a></td>
+                          <td><a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="index.php?controller=animal&action=quit&id=<?php echo $animal->id; ?>">Eliminar</a></td>
+                        </tr>
+                      <?php endforeach;?>
                     <tr>
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
+          <!-- End of datatable -->
   
 <?php
 include_once('includes/footer.php');

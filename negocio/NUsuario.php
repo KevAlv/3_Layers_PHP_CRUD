@@ -1,15 +1,25 @@
 <?php
     include_once('../datos/DUsuario.php');
+    include_once('upload_image.php');
 
-    if (isset($_POST['submit'])){
-        print_r($_FILES());
-        $target_dir = "assets/img/";
-        $target_file = $target_dir . basename($_FILES["foto"]["name"]);
+    
+    if(isset($_GET['delete_id'])){
+        echo 'eliminar';
         $usuario = new NUsuario;
-        $usuario->create($_POST['nombre'],$_POST['password'],$_POST['email'],$_POST['$target_file']);
-      //  header("Location: ../presentacion/usuarios.php");
+        $usuario->eliminar($_POST['delete_id']);
+        // header("Location: ../presentacion/usuarios.php");
         die();
     }
+        if (isset($_POST['nombre'])){
+        uploadImage($_FILES);
+        $target_file = $target_dir . basename($FILES["fileToUpload"]["name"]);
+        $usuario = new NUsuario;
+        $usuario->create($_POST['nombre'],$_POST['password'],$_POST['email'],$_POST['$target_file']);
+       header("Location: ../presentacion/usuarios.php");
+        die();
+    }
+
+  
 
     class NUsuario{
         private $usuario;
