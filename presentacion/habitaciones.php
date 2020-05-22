@@ -1,7 +1,11 @@
 <?php
 include_once('includes/header.php');
 include_once('../negocio/NHabitacion.php');
+include_once('../negocio/NPlan.php');
+include_once('../negocio/NCategoria.php');
 $habitaciones = new NHabitacion;
+$planes = new NPlan;
+$categorias = new NCategoria;
 ?>
         
     <!-- Page Heading -->
@@ -16,12 +20,38 @@ $habitaciones = new NHabitacion;
         <div class="card-body">
                   <!-- Page Heading -->
           <form action="/action_page.php" class="was-validated">
+
           <div class="form-group">
+    <label for="uname">Descripcion</label>
+    <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+    <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+
     <label for="uname">Tipo</label>
     <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
     <div class="valid-feedback">Valid.</div>
     <div class="invalid-feedback">Please fill out this field.</div>
+
+
+
+                  <nav class="navbar navbar-expand navbar-light bg-light mb-4">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <ul class="navbar-nav ml-auto">
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Dropdown
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right animated--grow-in" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </nav>
   </div>
+
 
   <div class="input-group mb-3">
   <div class="input-group-prepend">

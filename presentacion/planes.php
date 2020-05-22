@@ -3,6 +3,9 @@ ob_start();
 include_once('includes/header.php');
 include_once('../negocio/NPlan.php');
 $planes = new NPlan;
+
+
+
 ?>
         
     <!-- Page Heading -->
@@ -16,10 +19,10 @@ $planes = new NPlan;
         </div>
         <div class="card-body">
                   <!-- Page Heading -->
-          <form action="../negocio/NPlan.php" class="was-validated">
+          <form action="../negocio/NPlan.php" class="was-validated"  method = "POST" enctype="multipart/form-data">
           <div class="form-group">
     <label for="uname">Tipo</label>
-    <input type="text" class="form-control" id="uname" placeholder="Enter username" name="nombre" required>
+    <input type="text" class="form-control" id="uname" placeholder="Enter username" name="tipo" required>
     <div class="valid-feedback">Valid.</div>
     <div class="invalid-feedback">Please fill out this field.</div>
   </div>
@@ -62,9 +65,9 @@ $planes = new NPlan;
       <td><?php echo $plan->id?></td>
       <td><?php echo $plan->tipo?></td>
       <td>
-        <img src="assets/" alt="..." class="img-thumbnail">
+        <img src="assets/"+"<?php echo $plan->img?>" alt="..." class="img-thumbnail">
       </td>
-      <td><?php echo $plan->img?></td>
+    
       <td><a href="index.php?controller=animal&action=showById&id=<?php echo $animal->id; ?>">Editar</a></td>
       <td><a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="index.php?controller=animal&action=quit&id=<?php echo $animal->id; ?>">Eliminar</a></td>
     </tr>

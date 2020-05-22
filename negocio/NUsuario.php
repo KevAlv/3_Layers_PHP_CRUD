@@ -3,13 +3,6 @@
     include_once('upload_image.php');
 
     
-    if(isset($_GET['delete_id'])){
-        echo 'eliminar';
-        $usuario = new NUsuario;
-        $usuario->eliminar($_POST['delete_id']);
-        // header("Location: ../presentacion/usuarios.php");
-        die();
-    }
         if (isset($_POST['nombre'])){
         uploadImage($_FILES);
         $target_file = $target_dir . basename($FILES["fileToUpload"]["name"]);

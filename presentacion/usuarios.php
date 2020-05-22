@@ -17,7 +17,7 @@ $usuarios = new NUsuario;
 
 
              <!-- Page Heading -->
-          <form action="../negocio/NUsuario.php" class="was-validated" method = "POST" method="post" enctype="multipart/form-data">
+          <form action="../negocio/NUsuario.php" class="was-validated" method = "POST" enctype="multipart/form-data">
           <div class="form-group">
                 <label for="uname">Nombre</label>
                   <input type="text" class="form-control" id="uname" placeholder="Enter username" name="nombre" required>
@@ -64,6 +64,7 @@ $usuarios = new NUsuario;
                   <thead>
                     <tr>
                     <th>Nombre</th>
+                    <th>Foto</th>
                       <th>Email</th>
                       <th>Fecha</th>
                       <th>Acciones</th>
@@ -74,6 +75,9 @@ $usuarios = new NUsuario;
                   <?php foreach($usuarios->getAll() as $usuario): ?>
                 <tr>
                   <td><?php echo $usuario->nombre?></td>
+                  <td>
+                 <img src="assets/img/avatar1.png" class="img-thumbnail">
+                  </td>
                   <td><?php echo $usuario->email?></td>
                   <td><?php echo $usuario->fecha?></td>
                   <td><a href="../negocio/NUsuario.php?delete_id=<?php echo($usuario->id); ?>">Editar</a>

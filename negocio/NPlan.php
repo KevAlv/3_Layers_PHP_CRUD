@@ -1,5 +1,15 @@
 <?php
     include_once('../datos/DPlan.php');
+    include_once('upload_image.php');
+    if (isset($_POST['tipo'])){
+        uploadImage($_FILES);
+        $target_file = $target_dir . basename($FILES["fileToUpload"]["name"]);
+        $plan = new Nplan;
+        $plan->create($_POST['tipo'],$_POST['$target_file']);
+       header("Location: ../presentacion/planes.php");
+        die();
+    }
+
     class NPlan{
         private $plan;
         

@@ -49,8 +49,8 @@ $categorias = new NCategoria;
                   <thead>
                     <tr>
                       <th>Nro</th>
-                      <th>Color</th>
                       <th>Imagen</th>
+                      <th>Color</th>
                       <th>Descripcion</th>
                       <th>Acciones</th>
                     </tr>
@@ -63,12 +63,8 @@ $categorias = new NCategoria;
       <td><?php echo $categoria->color?></td>
       <td><?php echo $categoria->img?></td>
       <td><?php echo $categoria->descripcion?></td>
-      <td>
-        <img src="https://i.pinimg.com/280x280_RS/ab/2d/bb/ab2dbb689496c89833736671ea14b855.jpg" alt="..." class="img-thumbnail">
-      </td>
-      <td><?php echo $plan->img?></td>
-      <td><a href="index.php?controller=animal&action=showById&id=<?php echo $animal->id; ?>">Editar</a></td>
-      <td><a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="index.php?controller=animal&action=quit&id=<?php echo $animal->id; ?>">Eliminar</a></td>
+      <td><a href="index.php?controller=animal&action=showById&id=<?php echo $animal->id; ?>">Editar</a>
+      <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="index.php?controller=animal&action=quit&id=<?php echo $animal->id; ?>">Eliminar</a></td>
     </tr>
   <?php endforeach;?>
                     <tr>
