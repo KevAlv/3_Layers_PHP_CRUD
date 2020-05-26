@@ -15,7 +15,6 @@
 CREATE TABLE IF NOT EXISTS `categorias` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `color` text NOT NULL,
-  `img` text NOT NULL,
   `descripcion` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
@@ -40,7 +39,6 @@ CREATE TABLE IF NOT EXISTS `habitaciones` (
 CREATE TABLE IF NOT EXISTS `planes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tipo` text NOT NULL,
-  `img` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
@@ -68,7 +66,6 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `nombre` text NOT NULL,
   `password` text NOT NULL,
   `email` text NOT NULL,
-  `foto` text,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_u`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;

@@ -13,9 +13,6 @@ $usuarios = new NUsuario;
         Agregar
         </div>
         <div class="card-body">
-                  
-
-
              <!-- Page Heading -->
           <form action="../negocio/NUsuario.php" class="was-validated" method = "POST" enctype="multipart/form-data">
           <div class="form-group">
@@ -30,23 +27,15 @@ $usuarios = new NUsuario;
                 <div class="invalid-feedback">Please fill out this field.</div>
 
                 <label for="uname">Contrasena</label>
-                  <input type="text" class="form-control" id="uname" placeholder="Enter password" name="password" required>
+                  <input type="pass" class="form-control" id="uname" placeholder="Enter password" name="password" required>
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
             </div>
 
 
-  <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-  </div>
-  <div class="custom-file">
-    <input type="file" class="custom-file-input" id="fileToUpload" name="fileToUpload" aria-describedby="inputGroupFileAddon01">
-    <label class="custom-file-label" for="fileToUpload">Choose file</label>
-  </div>
-</div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+
+  <button type="submit" class="btn btn-primary">Guardar</button>
 
 </div>
 </div>
@@ -64,7 +53,6 @@ $usuarios = new NUsuario;
                   <thead>
                     <tr>
                     <th>Nombre</th>
-                    <th>Foto</th>
                       <th>Email</th>
                       <th>Fecha</th>
                       <th>Acciones</th>
@@ -75,14 +63,14 @@ $usuarios = new NUsuario;
                   <?php foreach($usuarios->getAll() as $usuario): ?>
                 <tr>
                   <td><?php echo $usuario->nombre?></td>
-                  <td>
-                 <img src="assets/img/avatar1.png" class="img-thumbnail">
-                  </td>
                   <td><?php echo $usuario->email?></td>
                   <td><?php echo $usuario->fecha?></td>
-                  <td><a href="../negocio/NUsuario.php?delete_id=<?php echo($usuario->id); ?>">Editar</a>
-                  <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" 
-                  href="../negocio/NUsuario.php?delete_id=<?php echo($usuario->id); ?>">Eliminar</a></td>
+                  <td>
+
+                      <a href="../negocio/NUsuario.php?delete_id=<?php echo $usuario->id_u; ?>">Eliminar</a>
+                      <a href="usuarios_edit.php?usuario=<?php echo $usuario->id_u; ?>">Editar</a>
+                      
+                  </td>
                 </tr>
               <?php endforeach;?>
                                 <tr>

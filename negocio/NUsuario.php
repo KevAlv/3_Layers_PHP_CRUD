@@ -1,18 +1,25 @@
 <?php
     include_once('../datos/DUsuario.php');
-    include_once('upload_image.php');
 
-    
-        if (isset($_POST['nombre'])){
-        uploadImage($_FILES);
-        $target_file = $target_dir . basename($FILES["fileToUpload"]["name"]);
+    if (isset($_GET['delete_id'])){
         $usuario = new NUsuario;
-        $usuario->create($_POST['nombre'],$_POST['password'],$_POST['email'],$_POST['$target_file']);
+        $usuario->eliminar($_GET['delete_id']); 
+        header("Location: ../presentacion/usuarios.php");
+        die();
+    }
+    if (isset($_POST['id_edit'])){
+        $usuario = new NUsuario;
+        $usuario->modificar($_POST['id_edit'],$nombre,$password,$email); 
+        header("Location: ../presentacion/usuarios.php");
+        die();
+    }
+        if (isset($_POST['nombre'])){
+        $usuario = new NUsuario;
+        $usuario->create($_POST['nombre'],$_POST['password'],$_POST['email']);
        header("Location: ../presentacion/usuarios.php");
         die();
     }
 
-  
 
     class NUsuario{
         private $usuario;
@@ -26,20 +33,18 @@
         }
 
 
-        public function create($nombre,$password,$email,$foto){
+        public function create($nombre,$password,$email){
             $this->usuario->set('nombre',$nombre);
             $this->usuario->set('password',$password);
             $this->usuario->set('email',$email);
-            $this->usuario->set('foto',$foto);
             $this->usuario->create();
          }
 
-        public function modificar($id,$password,$email,$foto){
+        public function modificar($id,$nombre,$password,$email){
             $this->usuario->set('id',$id);
             $this->usuario->set('nombre',$nombre);
             $this->usuario->set('password',$password);
             $this->usuario->set('email',$email);
-            $this->usuario->set('foto',$foto);
             $this->usuario->modificar();
          }
 

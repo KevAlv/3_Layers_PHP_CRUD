@@ -3,7 +3,6 @@
 class DPlan{
     private $id;
     private $tipo;
-    private $img;
 
     public $pdo;
 
@@ -30,7 +29,7 @@ class DPlan{
 
  public function create(){
      try {
-         $stm = $this->pdo->prepare("INSERT INTO planes (tipo,img) VALUES (?,?)");
+         $stm = $this->pdo->prepare("INSERT INTO planes (tipo) VALUES (?)");
      $stm->execute(array($this->tipo,$this->img));
      } catch (PDOException $e) {
          echo $e->getMessage();
@@ -40,7 +39,7 @@ class DPlan{
 
  public function modificar(){
     try {
-        $stm = $this->pdo->prepare("UPDATE planes SET tipo=?,img=? WHERE id=?");
+        $stm = $this->pdo->prepare("UPDATE planes SET tipo=? WHERE id=?");
         $stm->execute(array($this->tipo,$this->img,$this->id));
     } catch (PDOException $e) {
         echo $e->getMessage();

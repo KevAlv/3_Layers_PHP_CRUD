@@ -3,7 +3,6 @@
 class DCategoria{
     private $id;
     private $color;
-    private $img;
     private $descripcion;
 
     public $pdo;
@@ -31,7 +30,7 @@ class DCategoria{
 
  public function create(){
      try {
-         $stm = $this->pdo->prepare("INSERT INTO categorias (color,img,descripcion) VALUES (?,?,?)");
+         $stm = $this->pdo->prepare("INSERT INTO categorias (color,descripcion) VALUES (?,?)");
      $stm->execute(array($this->img,$this->color,$this->descripcion));
      } catch (PDOException $e) {
          echo $e->getMessage();
@@ -41,7 +40,7 @@ class DCategoria{
 
  public function modificar(){
     try {
-        $stm = $this->pdo->prepare("UPDATE categorias SET color=?,img=?,descripcion=? WHERE id=?");
+        $stm = $this->pdo->prepare("UPDATE categorias SET color=?,descripcion=? WHERE id=?");
         $stm->execute(array($this->color,$this->img,$this->descripcion,$this->id));
     } catch (PDOException $e) {
         echo $e->getMessage();

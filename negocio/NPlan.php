@@ -21,16 +21,14 @@
            return $this->plan->getAll();
         }
 
-        public function create($tipo,$img){
+        public function create($tipo){
             $this->plan->set('tipo',$tipo);
-            $this->plan->set('img',$img);
             $this->plan->create();
          }
 
-        public function modificar($id,$tipo,$img){
+        public function modificar($id,$tipo){
             $this->plan->set('id',$id);
             $this->plan->set('tipo',$tipo);
-            $this->plan->set('img',$img);
             $this->plan->modificar();
          }
 

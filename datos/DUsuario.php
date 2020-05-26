@@ -5,7 +5,6 @@
         private $nombre;
         private $password;
         private $email;
-        private $foto;
 
         public $pdo;
 
@@ -32,8 +31,8 @@
 
  public function create(){
      try {
-         $stm = $this->pdo->prepare("INSERT INTO usuarios (nombre,password,email,foto) VALUES (?,?,?,?)");
-     $stm->execute(array($this->nombre,$this->password,$this->email,$this->foto,));
+         $stm = $this->pdo->prepare("INSERT INTO usuarios (nombre,password,email) VALUES (?,?,?)");
+     $stm->execute(array($this->nombre,$this->password,$this->email));
      } catch (PDOException $e) {
          echo $e->getMessage();
      }
@@ -42,8 +41,8 @@
 
  public function modificar(){
     try {
-        $stm = $this->pdo->prepare("UPDATE usuarios SET nombre=?,password=?,email=?,foto=? WHERE id_u=?");
-        $stm->execute(array($this->nombre,$this->password,$this->email,$this->foto,$this->id));
+        $stm = $this->pdo->prepare("UPDATE usuarios SET nombre=?,password=?,email=? WHERE id_u=?");
+        $stm->execute(array($this->nombre,$this->password,$this->email,$this->id));
     } catch (PDOException $e) {
         echo $e->getMessage();
     }
